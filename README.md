@@ -1,2 +1,2 @@
-# Prog1_TPI
+# TPI_SistemaDeEncuestas
 Trabajo Práctico Integrador de Programación I
