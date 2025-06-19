@@ -1,0 +1,5 @@
+# Ignorar carpeta Debug y sus archivos temporales
+Debug/
+*.o
+# Ignorar ejecutables
+*.exe
