@@ -3,3 +3,5 @@ Debug/
 *.o
 # Ignorar ejecutables
 *.exe
+# Ignorar compilador específico de Zinjai
+*.zpr
