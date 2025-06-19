@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//#include <encuesta.h>
-//#include <respuesta.h>
+#include "encuesta.h"
+#include "respuesta.h"
 
 int main() {
     menu();
@@ -18,28 +18,26 @@ void menu() {
         printf("2. Responder encuesta\n");
         printf("3. Mostrar resultados\n");
         printf("4. Salir\n");
-        printf("Seleccione una opci�n: \n");
+        printf("Seleccione una opcion: ");
         scanf("%d", &opcion);
         switch (opcion) {
             case 1:
-                printf("Crear encuesta\n");
-                // Aquí se llamaría a la función para crear una encuesta
+                printf("\nCrear encuesta\n");
+                crearEncuesta();
                 break;
             case 2:
-                printf("Responder encuesta\n");
-                // Aquí se llamaría a la función para responder una encuesta
+                printf("\nResponder encuesta\n");
+                registrarRespuestas();
                 break;
             case 3:
-                printf("Mostrar resultados\n");
-                // Aquí se llamaría a la función para mostrar los resultados de las encuestas
+                printf("\nMostrar resultados\n");
+                mostrarResultadosOrdenados();
                 break;
             case 4:
-                printf("Salida exitosa del programa\n");
+                printf("\nSalida exitosa del programa\n");
                 break;
             default:
-                printf("Opci�n no v�lida. Intente de nuevo.\n");
+                printf("\nOpcion no valida. Intente de nuevo.\n");
         }
     } while (opcion != 4);
-
-
 }
