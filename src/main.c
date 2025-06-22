@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 #include "encuesta.h"
 #include "respuesta.h"
 
@@ -9,35 +8,35 @@ int main() {
     return 0;
 }
 
-void menu() {
+void menu(void) {
     int opcion;
+	initCatalogo();
 
     do {
         printf("\n--- Sistema de Encuestas ---\n");
-        printf("1. Crear encuesta\n");
-        printf("2. Responder encuesta\n");
-        printf("3. Mostrar resultados\n");
-        printf("4. Salir\n");
+        printf("1. Responder encuesta de Tecnologia\n");
+        printf("2. Mostrar resultados\n");
+        printf("3. Salir\n");
         printf("Seleccione una opcion: ");
-        scanf("%d", &opcion);
+		if (scanf("%d", &opcion) != 1) {
+			while (getchar()!='\n'); 
+			continue; 
+		}
+		
         switch (opcion) {
             case 1:
-                printf("\nCrear encuesta\n");
-                crearEncuesta();
+                printf("\nHa elegido responder la encuesta\n");
+                responderEncuesta();
                 break;
             case 2:
-                printf("\nResponder encuesta\n");
-                registrarRespuestas();
+                printf("\nMostrar resultados\n");
+                mostrarResultados();
                 break;
             case 3:
-                printf("\nMostrar resultados\n");
-                mostrarResultadosOrdenados();
-                break;
-            case 4:
                 printf("\nSalida exitosa del programa\n");
                 break;
             default:
                 printf("\nOpcion no valida. Intente de nuevo.\n");
         }
-    } while (opcion != 4);
+    } while (opcion != 3);
 }

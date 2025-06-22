@@ -3,12 +3,12 @@
 
 typedef struct Respuesta {
 	int id_pregunta;
-	int id_opcion_seleccionada;
+	int id_opcion;
 	struct Respuesta *siguiente;
 } Respuesta;
 
 // Prototipos de funciones
-void registrarRespuestas();
-void mostrarResultadosOrdenados();
+void responderEncuesta(void); //Donde se resgistran respuestas
+void mostrarResultados(void); //Muestra resultados con estadisticas + ordenacion
 
 #endif

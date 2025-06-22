@@ -1,30 +1,35 @@
 #ifndef ENCUESTA_H
 #define ENCUESTA_H
 
+/* --- constantes --- */
+#define MAX_ENCUESTAS  1
+#define MAX_PREGUNTAS 10
+#define MAX_OPCIONES   4
+#define TXT_LEN       100
+
+/* --- estructuras --- */
 typedef struct {
-	int id;         
-	char texto[100]; 
-	int contador;    
+	int  id;
+	char texto[TXT_LEN];
+	int  contador;
 } Opcion;
 
 typedef struct {
-	int id;         
-	char texto[200];       
-	Opcion *opciones;      
-	int num_opciones;      
+	int    id;
+	char   texto[TXT_LEN];
+	int    num_opciones;
+	Opcion opciones[MAX_OPCIONES];
 } Pregunta;
 
 typedef struct {
-	int id;  
-	char titulo[100];     
-	Pregunta *preguntas;   
-	int num_preguntas;    
+	int       id;
+	char      titulo[TXT_LEN];
+	int       num_preguntas;
+	Pregunta  preguntas[MAX_PREGUNTAS];
 } Encuesta;
 
-// Prototipos de funciones (a implementar en encuesta.c)
-void crearEncuesta();
-void mostrarEncuestas();
-void guardarEncuesta(Encuesta *e);
-Encuesta *cargarEncuesta(int *cantidad);
+/* --- prototipos --- */
+void  initCatalogo(void);
+const Encuesta* obtenerCatalogo(int *n);
 
 #endif
