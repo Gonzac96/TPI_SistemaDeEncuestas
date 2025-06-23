@@ -7,7 +7,7 @@ typedef struct Respuesta {
 	struct Respuesta *siguiente;
 } Respuesta;
 
-// Prototipos de funciones
+
 void responderEncuesta(void); //Donde se resgistran respuestas
 void mostrarResultados(void); //Muestra resultados con estadisticas + ordenacion
 

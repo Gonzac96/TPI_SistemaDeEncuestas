@@ -13,11 +13,14 @@ void menu(void) {
 	initCatalogo();
 
     do {
-        printf("\n--- Sistema de Encuestas ---\n");
-        printf("1. Responder encuesta de Tecnologia\n");
-        printf("2. Mostrar resultados\n");
-        printf("3. Salir\n");
-        printf("Seleccione una opcion: ");
+		printf("\n+-----------------------------------------+\n");
+		printf("|         SISTEMA DE ENCUESTAS            |\n");
+		printf("+-----------------------------------------+\n");
+		printf("| 1) Responder encuesta Tecnologica       |\n");
+		printf("| 2) Mostrar resultados y estadisticas    |\n");
+		printf("| 3) Salir                                |\n");
+		printf("+-----------------------------------------+\n");
+		printf("Seleccione una opcion: ");
 		if (scanf("%d", &opcion) != 1) {
 			while (getchar()!='\n'); 
 			continue; 
@@ -29,7 +32,7 @@ void menu(void) {
                 responderEncuesta();
                 break;
             case 2:
-                printf("\nMostrar resultados\n");
+                printf("\nSe muestran los resultados y estadisticas de la encuesta\n");
                 mostrarResultados();
                 break;
             case 3:

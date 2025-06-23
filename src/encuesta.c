@@ -43,14 +43,14 @@ void initCatalogo(void)
 	  "Chrome","Firefox","Edge","Otro");
 	P(5,"Lenguaje de programacion favorito",
 	  "Python","JavaScript","C/C++","Otro");
-	P(6,"Frecuencia de actualizacion de PC/Notebook",
-	  "< 2 anios","2-4 anios","4-6 anios","> 6 anios");
+	P(6,"Cual es tu principal preocupacion respecto a la tecnologia?",
+	  "Privacidad y seguridad de datos","Dependencia o exceso de uso","Obsolencia programada","Impacto ambiental");
 	P(7,"Red social que usas mas",
 	  "Facebook","Instagram","X/Twitter","TikTok");
 	P(8,"Modalidad de compra de tecnologia",
-	  "Online","Tienda fisica","Ambos","No compro");
-	P(9,"Interes en inteligencia artificial",
-	  "Nulo","Bajo","Medio","Alto");
+	  "Online","Tienda fisica","Ambos","No suelo comprar");
+	P(9,"Que tan familiarizado/a estas con la inteligencia artificial (IA)?",
+	  "Demasiado, soy un experto","Bastante, la uso frecuentemente","Algo, pero no la uso mucho","No tengo idea que es");
 	
 	catalogo_cargado = 1;
 }
@@ -62,3 +62,18 @@ const Encuesta* obtenerCatalogo(int *n)
 	return catalogo; 	//y el puntero apunta al array
 }
 
+/* =========================================================
+	BÚSQUEDA BINARIA de pregunta por id dentro de una encuesta
+   ========================================================= */
+const Pregunta* buscarPreguntaPorId(const Encuesta *enc, int id)
+{
+	int low = 0, high = enc->num_preguntas - 1;
+	while (low <= high) {
+		int mid = (low + high) / 2;
+		int midId = enc->preguntas[mid].id;
+		if (midId == id)      return &enc->preguntas[mid];
+		else if (midId < id)  low  = mid + 1;
+		else                  high = mid - 1;
+	}
+	return NULL;               /* no encontrada */
+}

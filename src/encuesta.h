@@ -31,5 +31,6 @@ typedef struct {
 /* --- prototipos --- */
 void  initCatalogo(void);
 const Encuesta* obtenerCatalogo(int *n);
+const Pregunta* buscarPreguntaPorId(const Encuesta *enc, int id);  /* binaria */
 
 #endif
