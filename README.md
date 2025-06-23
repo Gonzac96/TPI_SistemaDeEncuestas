@@ -58,9 +58,13 @@ gcc src/main.c src/encuesta.c src/respuesta.c -o sistema_encuestas.exe
 
 #### Instalar GCC (en caso de que no lo tenga)
 
+```bash
 sudo apt install build-essential      # Debian/Ubuntu/Pop!_OS
-# o
+```
+o
+```bash
 sudo dnf groupinstall "Development Tools"  # Fedora
+```
 
 Luego, en la carpeta del proyecto
 
