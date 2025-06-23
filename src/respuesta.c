@@ -104,6 +104,6 @@ void mostrarResultados(void) {
 			printf("\"%s\"", pr.opciones[i].texto);
 			if (i < numModas - 1) printf(" / ");
 		}
-		printf(" —> %d votos (%.1f%%)\n", modaCnt, modaPct);
+		printf(" -> %d votos (%.1f%%)\n", modaCnt, modaPct);
 	}
 }
