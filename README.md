@@ -24,11 +24,13 @@ Desde Code copiamos el HTTPS y escribimos en nuestro git bash:
 
 ```bash
 git clone https://github.com/Gonzac96/TPI_SistemaDeEncuestas.git
+```
 
 Luego nos movemos a la carpeta con:
 
 ```bash
 cd TPI_SistemaDeEncuestas
+```
 
 
 > A continuación se indican **dos caminos**: uno para **Windows** (MinGW / Zinjai) y otro para **Linux** (GCC).
@@ -50,6 +52,7 @@ cd TPI_SistemaDeEncuestas
 ```bash
 gcc src/main.c src/encuesta.c src/respuesta.c -o sistema_encuestas.exe
 .\sistema_encuestas.exe
+```
 
 ### 2. Linux
 
@@ -58,3 +61,10 @@ gcc src/main.c src/encuesta.c src/respuesta.c -o sistema_encuestas.exe
 sudo apt install build-essential      # Debian/Ubuntu/Pop!_OS
 # o
 sudo dnf groupinstall "Development Tools"  # Fedora
+
+Luego, en la carpeta del proyecto
+
+```bash
+gcc src/main.c src/encuesta.c src/respuesta.c -o sistema_encuestas
+./sistema_encuestas
+```
