@@ -3,7 +3,9 @@
 #include "encuesta.h"
 #include "respuesta.h"
 
-int main() {
+void menu(void);
+
+int main(void) {
     menu();
     return 0;
 }
@@ -20,7 +22,7 @@ void menu(void) {
 		printf("| 2) Mostrar resultados y estadisticas    |\n");
 		printf("| 3) Salir                                |\n");
 		printf("+-----------------------------------------+\n");
-		printf("Seleccione una opcion: ");
+		printf("Seleccione una opcion (1-3): ");
 		if (scanf("%d", &opcion) != 1) {
 			while (getchar()!='\n'); 
 			continue; 
